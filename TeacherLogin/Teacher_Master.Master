@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Teacher_Master.master.cs" Inherits="Unommer.Teacher_Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="CSS/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/jquery-ui.css" rel="stylesheet" />
+    <link href="CSS/sap_access.css" rel="stylesheet" />
+    <%--<link href="CSS/teachermaster.css" rel="stylesheet" />--%>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <%--<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        function successalert(message) {
+            swal({
+                icon: "success",
+                title: '',
+                text: message,
+                type: 'success'
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function failurealert(message) {
+            swal({
+                icon: "error",
+                title: '',
+                text: message,
+                type: 'success'
+            });
+        }
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#">
+                        <h1 class="navbar-brand">UNNOMER</h1>
+                        <%--<h2>ecam+</h2>--%>
+                    </a>
+
+                </div>
+                 <div class="header-top destop-topmenu">
+
+                    <div class="menu-wrap">
+                        <ul class="nav navbar-nav top-menu">
+                            <li><a href="Teacher_Landing_Page.aspx"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                            <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>Help</a></li>
+                            <li class="dropdown profile-pic">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sort-desc bottmArrow" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu profilDropMenu arrow_box">
+                                    <li><a href="#">
+                                        
+                                    <asp:Label runat="server" ID="lblteachername"></asp:Label></a></li>
+                                    <li><a href="teacherchangepass.aspx">Change Password </a></li>
+                                    <li><a href="log_out.aspx">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <%--<div class="header-top destop-topmenu">
+                <div class="centerdiv">
+                    <div class="menu-wrap">
+                        <ul class="nav navbar-nav top-menu">
+                            <li class="dropdown">
+                                <a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i>Account settings<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="teacherchangepass.aspx"> Change Password </a></li>
+                                </ul>
+                            </li>
+                            <li class="log-out"><a href="log_out.aspx">Log out </a></li>
+                        </ul>
+                    </div>
+                </div>--%>
+            </div>
+            <div class="header-bottom">
+                <div class="nav-wrap">
+                <div class="container">
+                    <%--<div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        
+                        
+                    </div>--%>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse main-menu" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="Teacher_Landing_Page.aspx">Home</a></li>
+                            <%--<li class="main-menu-divider">|</li>--%>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Roster <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="View_Roster_Teacher.aspx">View Roster </a></li>
+                                    <li><a href="Roster_Modification.aspx">Update Roster </a></li>
+                                </ul>
+                            </li>
+                       <%--     <li class="main-menu-divider">|</li>--%>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Collaboration <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Teacher_collab_page.aspx">Create Collaboration Request </a></li>
+                                    <li><a href="Teacher_Cancel_Collab.aspx">Cancel Collaboration Request </a></li>
+                                    <li><a href="TeacherDebrief.aspx">Debrief Collaboration </a></li>
+                                </ul>
+                            </li>
+                            <%--<li class="main-menu-divider">|</li>--%>
+                            <li class="dropdown"><a href="chatfromappteacher.aspx">Join Chat </a></li>
+                            <%--<li class="main-menu-divider">|</li>--%>
+                            <li class="dropdown"><a href="#report">Report </a></li>
+                            <li role="separator" class="divider"></li>
+                            <!-- mobile top menu -->
+                           
+                            <%--<div class="header-top mobile-menu">
+                                <div class="container">
+                                    <div class="menu-wrap">
+                                        <ul class="nav navbar-nav top-menu">
+                                            <li><a href="#">Account settings</a></li>
+                                            <li class="log-out"><a href="log_out.aspx">Log out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>--%>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                    </div>
+            </div>
+        </nav>
+
+
+    </asp:ContentPlaceHolder>
+
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <%--<asp:Label ID="lblusrname" runat="server" Text="Welcome :-" CssClass="clientusrname"></asp:Label>--%>
+        <%--<asp:Label ID="lbltechrname" runat="server" CssClass="clienttchrname"></asp:Label>--%>
+
+        <asp:Label ID="lblteachemail" Text="" runat="server" ></asp:Label>
+       <%-- <asp:Label ID="lblteachername" Text="" runat="server" CssClass="clienttchrname"></asp:Label>--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-lft">© 2009 - 2018 Unikul Solutions Pvt Ltd. All rights reserved.</div>
+                <div class="footer-rt">
+                    <div class="social-icon">
+                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal_Admin_Master.master.cs" Inherits="Unommer.Portal_Admin_Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/sap_access.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        function successalert(message) {
+            swal({
+                icon: "success",
+                title: '',
+                text: message,
+                type: 'success'
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function failurealert(message) {
+            swal({
+                icon: "error",
+                title: '',
+                text: message,
+                type: 'success'
+            });
+        }
+    </script>
+
+
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#">
+                        <h1 class="navbar-brand">UNNOMER</h1>
+                    </a>
+
+                </div>
+
+                <div class="header-top destop-topmenu">
+
+                    <div class="menu-wrap">
+                        <ul class="nav navbar-nav top-menu">
+                            <li><a href="Portal_Admin_Landing.aspx"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                            <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i>Help</a></li>
+                            <li class="dropdown profile-pic">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sort-desc bottmArrow" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu profilDropMenu arrow_box">
+                                    <li><a href="#">
+                                        <asp:Label runat="server" ID="lbladminname" Text=""></asp:Label></a></li>
+                                    <li><a href="Portal_Admin_Change_Password.aspx">Change Password </a></li>
+                                    <li><a href="log_out.aspx">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom">
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="nav-wrap">
+                    <div class="container">
+                        <div class="collapse navbar-collapse main-menu" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Schools <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portal_admin_add_school.aspx">Add School </a></li>
+                                        <li><a href="portal_admin_inactivate_school.aspx">Inactivate Schools </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage BackUps<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portal_admin_create_backup.aspx">Create Backup </a></li>
+                                        <li><a href="portal_admin_restore_database.aspx">Restore Database </a></li>
+                                    </ul>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </asp:ContentPlaceHolder>
+
+    <form id="form1" runat="server">
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-lft">© 2009 - 2018 Unikul Solutions Pvt Ltd. All rights reserved.</div>
+                <div class="footer-rt">
+                    <div class="social-icon">
+                        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
+
